@@ -1,0 +1,27 @@
+Author:Faris Alotaibi
+
+Notes:
+Start the server first with ./server then ./client username 
+Client usernames can't be more than 255 characters as a 
+general limit. 
+Messages shouldn't be longer than MAXLINE+MAXNAME characters in total.
+That said, they can be sent without issue (tested with a random string 
+of 6000 characters)
+There's a limit of 10 clients allowed on the server at once. This 
+can easily be changed by editing the macro value, it just seemed 
+like a good number at the time. 
+Connect & disconnects are logged on the servers window as well as 
+sent to clients. 
+
+The client's implementation is mostly the same, main difference 
+has to do with how messages are sent. In the previous homework I 
+had clients always write username and then message to the partner.
+This time I had it write the username once and then only write the
+message it was receiving. 
+Also removed the nametoAddr function I had before as it wasn't 
+necessary for this assignment. It could easily be added if the
+server was running anywhere other than localhost. 
+
+Server choices made include leaving management of connect 
+and disconnect activities on invidual client threads. I had the idea 
+of letting the messager handle it but I decided against it.
